@@ -11,8 +11,8 @@ from ADCDifferentialPi import ADCDifferentialPi
 
 adc = ADCDifferentialPi(0x68, 0x68, 18)
 
-outbox_dir = "/home/spectrophotometer/outbox"
-local_dir = "/home/spectrophotometer/"
+outbox_dir = "/home/PI_USER/outbox" # change as appropriate
+local_dir = "/home/PI_USER/" # change as appropriate
 
 spectrum = None
 _current_file = None
