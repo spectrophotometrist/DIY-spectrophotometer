@@ -8,7 +8,7 @@ def load_and_plot_spectra():
     filepaths = filedialog.askopenfilenames(
         initialdir="C:/Users/username/path", #fill in the path to the folder where spectra are being written
         title="Choose spectra to read",
-        filetypes=(("Spectra", "*.csv"))
+        filetypes=("Spectra", "*.csv")
     )
 
     if filepaths:
