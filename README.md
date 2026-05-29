@@ -15,7 +15,6 @@ photodiode.py is a simple program on the RPi that monitors the output voltage fr
 
 spectrophotometer.py must be running on the RPi to use the spectrophotometer
 
-
 spectrophotometer_control.py is run on the controlling computer to trigger the spectrophotometer to read a spectrum (or obtain a blank reading); after a spectrum has been obtained, it automatically creates an absorbance vs. motor position plot
 
 spectrum_compare.py allows the user to select multiple spectra to open at once and compare them
@@ -25,3 +24,8 @@ Please feel free to use this "terrible python code" as the foundation for your o
 Soli Deo Gloria!
 
 Ethan S
+
+4/30/26
+
+5/29/26 UPDATE:
+New versions of two scripts (spectrophotometer_control_lab.py and spectrophotometer_lab.py) have been added, which allow the computer to copy files from the Pi, even if the Pi cannot scp files directly to the computer (e.g. if the computer is managed by your organization, and you do not have admin privileges).
