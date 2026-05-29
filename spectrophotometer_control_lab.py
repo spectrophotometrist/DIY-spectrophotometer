@@ -56,6 +56,7 @@ def start_watcher():
                 sftp.get(remote_path, local_path)
                 try:
                     process_csv(local_path)
+                    sftp.remove(remote_path)
                 except Exception as e:
                     print(f"Error processing file: {e}")
                 seen_files.add(f)
@@ -64,7 +65,7 @@ def start_watcher():
         time.sleep(2)
 
 def blank():
-    HOST = 'strawberry-pie'
+    HOST = 'Pi username' # change as appropriate
     PORT = 5000
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         try:
@@ -75,7 +76,7 @@ def blank():
             messagebox.showerror("Connection Error", "Cannot connect to Pi.")
 
 def sample():
-    HOST = 'strawberry-pie'
+    HOST = 'Pi username' # change as appropriate
     PORT = 5000
     name = entry.get()
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
