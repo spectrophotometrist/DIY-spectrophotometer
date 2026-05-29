@@ -13,10 +13,6 @@ adc = ADCDifferentialPi(0x68, 0x68, 18)
 
 outbox_dir = "/home/spectrophotometer/outbox"
 local_dir = "/home/spectrophotometer/"
-remote_user = "ethan.sherman"
-remote_host = "WD32562-0718"
-remote_path = r"C:\Spectrophotometer\Spectra"
-
 
 spectrum = None
 _current_file = None
@@ -118,7 +114,7 @@ def newline(voltage):
     _writer.writerow([_line_number, timestamp, voltage, Vref, T, A])
     _file_handle.flush()
 
-def sendfile(remote_user, remote_host, remote_path):
+def sendfile():
     global _current_file, _writer, _file_handle
     if _file_handle is None:
         raise RuntimeError("No file")
@@ -154,7 +150,7 @@ try:
             newfile()
             step_motor()
             conn.sendall(b"Sample complete")
-            sendfile(remote_user, remote_host, remote_path)
+            sendfile()
         conn.close()
 
 finally:
